@@ -61,7 +61,6 @@ bool Coordinate::operator <= (Coordinate c)
 	if(x <= c.x) return true;
 	else return false;
 }
-
 bool Coordinate::operator == (Coordinate c)
 {
 	if(x == c.x) return true;
