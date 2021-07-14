@@ -34,46 +34,50 @@ void Coordinate::move_y(float val)
 
 void Coordinate::move(float val)
 {
+
 	move_x(val);
 	move_y(val);
 }
 
 bool Coordinate::operator > (Coordinate c)
 {
-	if(x > c.x) return true;
+	float a = getDistance(), b= c.getDistance();
+	float epsilon = .0000000001;
+	a = a-b;
+	if(a > epsilon) return true;
 	else return false;
 }
 
 bool Coordinate::operator < (Coordinate c)
 {
-	if(x < c.x) return true;
+	if(c>*this) return true;
 	else return false;
 }
 
 bool Coordinate::operator >= (Coordinate c)
 {
-	if(x >= c.x) return true;
+	if(*this > c || *this == c) return true;
 	else return false;
 }
 
 bool Coordinate::operator <= (Coordinate c)
 {
-	if(x <= c.x) return true;
+	if(*this < c || *this == c) return true;
 	else return false;
 }
 bool Coordinate::operator == (Coordinate c)
 {
-	//float epsilon = .00000001;
-	//if(float(x-c.x) < epsilon) return true;
-	//else return false;
-	if(x == c.x) return true;
+	float a = getDistance(), b= c.getDistance();
+	float epsilon = .0000000001;
+	a = fabs(a-b);
+	if(a < epsilon) return true;
 	else return false;
 }
 
 bool Coordinate::operator != (Coordinate c)
 {
-	if(x != c.x) return true;
-	else return false;
+	if(c == *this) return false;
+	else return true;
 }
 
 Coordinate Coordinate::operator ++()
@@ -93,12 +97,4 @@ Coordinate Coordinate::operator --()
 Coordinate Coordinate::operator --(int)
 {
 	return (Coordinate(--x , --y));
-}
-
-
-int main()
-{
-	Coordinate a(2.3) , b(2.3);
-	if(a==b) cout<<"working";
-	else cout<<"not working";
 }
