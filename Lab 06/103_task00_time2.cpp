@@ -30,6 +30,11 @@ int getMins() const { return minutes; }
 int getSecs() const { return seconds; }
 };
 ////////////////////////////////////////////////////////////////
+
+
+
+
+
 class time12
 {
 private:
@@ -53,6 +58,11 @@ cout << am_pm;
 }
 };
 //--------------------------------------------------------------
+
+
+
+
+
 time12::time12( time24 t24 ) //1-arg constructor
 { //converts time24 to time12
 int hrs24 = t24.getHrs(); //get hours
@@ -72,6 +82,11 @@ if(hrs==0) //00 is 12 a.m.
 { hrs=12; pm=false; }
 }
 ////////////////////////////////////////////////////////////////
+
+
+
+
+
 int main()
 {
 int h, m, s;

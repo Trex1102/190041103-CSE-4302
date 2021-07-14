@@ -2,6 +2,9 @@
 #include <string>
 using namespace std;
 ////////////////////////////////////////////////////////
+
+
+
 class time12 // destination class
 {
 private:
@@ -25,6 +28,9 @@ cout << am_pm;
 }
 };
 ////////////////////////////////////////////////////////////////
+
+
+
 class time24 // source class
 {
 private:
@@ -49,6 +55,10 @@ cout << seconds;
 operator time12() const; //conversion operator
 };
 ///////////////////////////////////////////////////////
+
+
+
+
 time24::operator time12() const //conversion operator
 {
 int hrs24 = hours;
@@ -68,6 +78,11 @@ if(hrs12==0) //00 is 12 a.m.
 return time12(pm, hrs12, roundMins);
 }
 ////////////////////////////////////////////////////////////////
+
+
+
+
+
 int main()
 {
 int h, m, s;
