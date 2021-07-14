@@ -33,11 +33,3 @@ FLOAT FLOAT:: operator / (FLOAT f1)
 	if(f1.value == 0) return FLOAT(0.0);
 	return FLOAT(value / f1.value);
 }
-
-int main()
-{
-	FLOAT f1(5.3) , f2;
-	f1.display(); 
-	int x = f1;
-	cout<< x;
-}
