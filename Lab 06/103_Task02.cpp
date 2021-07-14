@@ -7,7 +7,7 @@ FLOAT::operator int() const
 	int x = (int)value;
 	return x;
 }
-
+ 
 void FLOAT::display() const
 {
 	cout<<value<<endl;
