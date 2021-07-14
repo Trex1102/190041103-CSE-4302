@@ -3,19 +3,19 @@
 #include <math.h>
 using namespace std;
 
-void Coordinate::display()
+void Coordinate::display() const
 {
 	cout<<"Abscissa: "<<x<<endl<<"Ordinate: "<<y<<endl;
 }
 
-float Coordinate::getDistance (Coordinate c)
+float Coordinate::getDistance (Coordinate c) const
 {	
 	float res = ((x-c.x)*(x-c.x)) + ((y-c.y) * (y-c.y));
 	res = sqrt(res);
 	return res;
 }
 
-float Coordinate::getDistance ()
+float Coordinate::getDistance () const
 {
 	float res = (x*x) + (y*y);
 	res = sqrt(res);
