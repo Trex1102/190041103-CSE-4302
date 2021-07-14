@@ -6,9 +6,9 @@ private:
 public:
 	Coordinate(float x= 0 ,float y = 0): x(x), y(y){}
 	~Coordinate(){}
-	void display ();
-	float getDistance (Coordinate c);
-	float getDistance ();
+	void display () const;
+	float getDistance (Coordinate c) const;
+	float getDistance () const;
 	void move_x(float val);
 	void move_y(float val);
 	void move(float val);
