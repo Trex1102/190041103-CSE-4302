@@ -63,6 +63,9 @@ bool Coordinate::operator <= (Coordinate c)
 }
 bool Coordinate::operator == (Coordinate c)
 {
+	//float epsilon = .00000001;
+	//if(float(x-c.x) < epsilon) return true;
+	//else return false;
 	if(x == c.x) return true;
 	else return false;
 }
@@ -95,6 +98,7 @@ Coordinate Coordinate::operator --(int)
 
 int main()
 {
-	Coordinate a(2,3);
-	a.display();
+	Coordinate a(2.3) , b(2.3);
+	if(a==b) cout<<"working";
+	else cout<<"not working";
 }
