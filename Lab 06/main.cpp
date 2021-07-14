@@ -7,5 +7,5 @@ int main()
 {
 	Coordinate c1(1,2) , c2(2,1);
 	c1.display();
-	if(c1 == c2) cout<<"same"<<endl;
+	if(c1 == c2) cout<<"same"<<endl; 
 }
