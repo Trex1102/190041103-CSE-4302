@@ -82,6 +82,5 @@ int main()
 	a.getInformation();
 	cout<<a.getAge()<<endl;
 	cout<< (a==120);
-	a--5;
 	a.getInformation();
 }
