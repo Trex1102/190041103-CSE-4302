@@ -6,7 +6,7 @@ private:
 	float value;
 public:
 	FLOAT(float value = 0.0): value(value){}
-	~FLOAT(){}
+	~FLOAT(){} 
 	void display() const;
 	FLOAT operator + (FLOAT f1);
 	FLOAT operator - (FLOAT f1);
