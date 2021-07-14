@@ -2,22 +2,33 @@
 #include <iostream>
 using namespace std;
 
-FLOAT operator + (FLOAT f1)
+FLOAT::operator int() const
+{
+	int x = (int)value;
+	return x;
+}
+
+void FLOAT::display() const
+{
+	cout<<value<<endl;
+}
+
+FLOAT FLOAT::operator + (FLOAT f1)
 {
 	return FLOAT(value + f1.value);
 }
 
-FLOAT operator - (FLOAT f1)
+FLOAT FLOAT:: operator - (FLOAT f1)
 {
 	return FLOAT(value - f1.value);
 }
 
-FLOAT operator * (FLOAT f1)
+FLOAT FLOAT:: operator * (FLOAT f1)
 {
 	return FLOAT(value * f1.value);
 }
 
-FLOAT operator / (FLOAT f1)
+FLOAT FLOAT:: operator / (FLOAT f1)
 {
 	if(f1.value == 0) return FLOAT(0.0);
 	return FLOAT(value / f1.value);
@@ -25,5 +36,8 @@ FLOAT operator / (FLOAT f1)
 
 int main()
 {
-	
+	FLOAT f1(5.3) , f2;
+	f1.display(); 
+	int x = f1;
+	cout<< x;
 }
