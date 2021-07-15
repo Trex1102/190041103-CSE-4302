@@ -25,7 +25,7 @@ int main()
 	cout<<a.getAge()<<endl;
 	cout<< (a==120)<<endl;
 	int x =5;
-	a.operator--(x);
+	a--;
 	a.getInformation(); 
 	FLOAT f1(5.052);
 	int i = f1;
