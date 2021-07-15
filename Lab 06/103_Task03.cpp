@@ -67,7 +67,7 @@ public:
 	}
 
 		
-	void operator --(int dec){
+	void operator --(int dec = 1){
 		height -= dec;
 	}
 
