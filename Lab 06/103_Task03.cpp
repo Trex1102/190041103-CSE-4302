@@ -65,12 +65,10 @@ public:
 		if((int) weight == data) return 1;
 		else return 0;
 	}
-
 		
-	void operator --(int dec = 1){
-		height -= dec;
+	void operator --(int dec){
+		if(dec == 0) height--;
+		else height -= dec;
 	}
-
 	~ZooAnimal(){}
-
 };
