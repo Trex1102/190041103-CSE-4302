@@ -39,7 +39,7 @@ public:
 	void setName(const char *name){
 		strcpy(nameofAnimal , name);
 	}
-	void setBYear(int byear){
+	void setBYear(int byear = 2021){
 		birthYear= byear;
 	}
 	void setCageNumber(int x){
