@@ -17,7 +17,7 @@ float Coordinate::getDistance (Coordinate c) const
 
 float Coordinate::getDistance () const
 {
-	float res = (x*x) + (y*y);
+	float res = getDistance(Coordinate(0,0));
 	res = sqrt(res);
 	return res;
 }
@@ -67,11 +67,8 @@ bool Coordinate::operator <= (Coordinate c)
 }
 bool Coordinate::operator == (Coordinate c)
 {
-	float a = getDistance(), b= c.getDistance();
-	float epsilon = .0000000001;
-	a = fabs(a-b);
-	if(a < epsilon) return true;
-	else return false;
+	if(*this > c || *this < c) return false;
+	else return true;
 }
 
 bool Coordinate::operator != (Coordinate c)
