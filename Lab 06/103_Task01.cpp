@@ -18,7 +18,6 @@ float Coordinate::getDistance (Coordinate c) const
 float Coordinate::getDistance () const
 {
 	float res = getDistance(Coordinate(0,0));
-	res = sqrt(res);
 	return res;
 }
 
