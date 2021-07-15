@@ -1,4 +1,6 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <math.h>
+#include <string.h>
 using namespace std;
 
 class ZooAnimal{
@@ -64,23 +66,11 @@ public:
 		else return 0;
 	}
 
-	
+		
+	void operator --(int dec){
+		height -= dec;
+	}
 
 	~ZooAnimal(){}
 
 };
-
-int main()
-{
-	//ZooAnimal a("Alan" , 2010 , 123, 120.3 , 5);
-	ZooAnimal a;
-	a.setName("Alan");
-	a.setHeight(5);
-	a.setWeight(120.3);
-	a.setBYear(2010);
-	a.setCageNumber(123);
-	a.getInformation();
-	cout<<a.getAge()<<endl;
-	cout<< (a==120);
-	a.getInformation();
-}
