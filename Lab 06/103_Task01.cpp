@@ -87,7 +87,7 @@ Coordinate Coordinate::operator ++()
 
 Coordinate Coordinate::operator ++(int)
 {
-	return (Coordinate(++x , ++y));
+	return (Coordinate(x++ , y++));
 }
 Coordinate Coordinate::operator --()
 {
@@ -96,5 +96,5 @@ Coordinate Coordinate::operator --()
 
 Coordinate Coordinate::operator --(int)
 {
-	return (Coordinate(--x , --y));
+	return (Coordinate(x-- , y--));
 }
