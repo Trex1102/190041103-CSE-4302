@@ -66,7 +66,7 @@ public:
 
 class ONE{
 public:
-	void foo(){cout<<"ONE FOO";}
+	void foo(){cout<<"ONE FOO"<<endl;}
 };
 
 class TWO: virtual public ONE{ // virtual defines it will only call once
@@ -80,11 +80,19 @@ class FOUR: public TWO, public THREE{
 
 // diamond shape problem: B --> A, C --> A , D --> B,C
 
-//abstract base class
-//
-class Abstract_Base{
+// abstract base class
+// it corresponds an abstract concept
+// at programming level ABC is a class that works as an interface, it has one or more
+// pure virtual functions & there will be no instances of ABC
+class Shape{
 public:
+	virtual void draw() const = 0; // pure virtual function --> it indicates the derived
+	// class must have this attribute
+};
 
+class Circle: public Shape{
+public:
+	virtual void draw() const {cout<<"This is circle"<<endl;}
 };
 
 int main()
@@ -97,5 +105,6 @@ int main()
 	b.foo(); // diamond shape problem
 
 
-
+	Circle circle; // abstract class
+	circle.draw(); // pure virtual function
 }
