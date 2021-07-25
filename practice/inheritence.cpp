@@ -141,6 +141,10 @@ public:
 // 9. always defiend in the base class 
 
 
+// passing array of objects
+
+
+
 
 
 int main()
