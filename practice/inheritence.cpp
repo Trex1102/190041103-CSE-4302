@@ -50,7 +50,7 @@ public:
 	~B(){}
 	int geta(){return a;}
 	void seta(int x){a=x;}
-	void bubla(){cout<<"Class B bubla";}
+	void bubla(){cout<<"Class B bubla"<<endl;}
 };
 
 class C: public A, public B{
@@ -64,12 +64,38 @@ public:
 
 //diamond shape problem
 
+class ONE{
+public:
+	void foo(){cout<<"ONE FOO";}
+};
+
+class TWO: virtual public ONE{ // virtual defines it will only call once
+};
+
+class THREE:virtual public ONE{ 
+};
+
+class FOUR: public TWO, public THREE{
+};
+
+// diamond shape problem: B --> A, C --> A , D --> B,C
+
+//abstract base class
+//
+class Abstract_Base{
+public:
+
+};
 
 int main()
 {
 	
-	C a;
+	C a; // multiplel inheritance
 	a.B::bubla(); // multiple inheritance
+
+	FOUR b; // diamond shape problem
+	b.foo(); // diamond shape problem
+
 
 
 }
