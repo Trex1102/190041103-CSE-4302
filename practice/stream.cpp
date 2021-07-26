@@ -1,6 +1,7 @@
-#include <iostream>
+#include <iostream> // input output stream header
+#include <iomanip> // manipulator header
 using namespace std;
-
+// ios class
 void _width(){
 	cout.width(5); // fill the width of a's output with 5's spaces
 	char c ='A';
@@ -78,26 +79,40 @@ void adjust_flag(){
 
 void manipulators(){
 	char a[256] , b[256];
-	cin>>ws; // this indicates all the whitespaces will be ignored upto the input
-	cin.getline(a,256); // getline gets the whole line after the space also
-	cin>>ws;
-	cin.getline(b,256);
-	cout<<a<<' '<<b<<endl;
+	//cin>>ws; // this indicates all the whitespaces will be ignored upto the input
+	//cin.getline(a,256); // getline gets the whole line after the space also
+	//cin>>ws;
+	//cin.getline(b,256);
+	//cout<<a<<' '<<b<<endl;
 	//this will ignore all the spaces which will be entered after the cin>>ws is called
 	// until another cin is called
 
+	cout<<"saikat"<<ends<<"saikat"<<endl; // ends add a null character
+
+	cout<<setbase(8); // same as cout.setf(ios::hex)
+	cout<<110<<endl;
+	cout.setf(ios::hex);
+	cout<<setfill('x')<<setw(5);
+	cout<<77<<endl;
+
+	double c = 60.345668;
+	cout<<setprecision(5)<<c<<endl;
+}
+
+void ios_function(){
 	
-
-
 }
 
 int main()
 {
 	// c++ i/o flags
 	// format flags
+	// cout.flags(ios::hex|ios::showbase)
+	// cout.setiosflags(ios::hex|ios::showbase)
+	//cout<<resetiosflags(ios::hex|ios::showbase);
 	independent_flags();
 	_setf();
 	adjust_flag();
 	manipulators();
-
+	ios_function();
 }
