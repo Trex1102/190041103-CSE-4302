@@ -77,6 +77,17 @@ void adjust_flag(){
 // we can set any of the flag with cout.setf(ios::flag1|ios::flag2)
 
 void manipulators(){
+	char a[256] , b[256];
+	cin>>ws; // this indicates all the whitespaces will be ignored upto the input
+	cin.getline(a,256); // getline gets the whole line after the space also
+	cin>>ws;
+	cin.getline(b,256);
+	cout<<a<<' '<<b<<endl;
+	//this will ignore all the spaces which will be entered after the cin>>ws is called
+	// until another cin is called
+
+	
+
 
 }
 
@@ -87,8 +98,6 @@ int main()
 	independent_flags();
 	_setf();
 	adjust_flag();
-	string a, b;
-	cin>>a>>b;
-	cout<<a<<' '<<b;
+	manipulators();
 
 }
