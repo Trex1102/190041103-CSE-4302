@@ -1,6 +1,19 @@
 #include <iostream> // input output stream header
 #include <iomanip> // manipulator header
+#include <vector>
 using namespace std;
+
+void display(vector<int> v){
+	for(auto i : v)cout<<i<<' ';
+	cout<<endl;
+}
+
+void display(int a[] , int s){
+	for(int i =0 ; i< s; i++) cout<<a[i]<<' ';
+	cout<<endl;
+}
+
+
 // ios class
 void _width(){
 	cout.width(5); // fill the width of a's output with 5's spaces
@@ -100,8 +113,26 @@ void manipulators(){
 }
 
 void ios_function(){
-	
+	vector<int> v(4);
+	fill(v.begin(), v.end(), 3); // fills all the characters as the second arg
+	//display(v); // to display the values
+
+	char f = cout.fill();
+	cout<<f<<endl;
+	// to get the fill character
+	// be aware these two fill is totally different
+
+	int p = cout.precision();
+	cout<<p<<endl;
+	// to get the precision margin
+
+	int w = cout.width(); 
+	cout<<w<<endl;
+
+	// setf(flag, field)
 }
+
+
 
 int main()
 {
