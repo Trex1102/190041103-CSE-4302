@@ -132,7 +132,9 @@ void ios_function(){
 	// setf(flag, field)
 }
 
+void showflags(){
 
+}
 
 int main()
 {
@@ -141,6 +143,7 @@ int main()
 	// cout.flags(ios::hex|ios::showbase)
 	// cout.setiosflags(ios::hex|ios::showbase)
 	//cout<<resetiosflags(ios::hex|ios::showbase);
+	showflags();
 	independent_flags();
 	_setf();
 	adjust_flag();
