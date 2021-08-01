@@ -24,12 +24,12 @@ void fucntions(){
 	/*cin.getline(s, 256); // takes whitespaces as input also
 	cout<<cin.gcount()<<endl; // returns the length of the string with extra null char
 
-	cin.get(s,256); // char by char return ... same as c gets
+	cin.get(s,256); // char by char return ... same as c gets, won't work without size
 	cout<<s;*/
 
 	/*char first, last;
 	first = cin.get(); // to get the first inputted character
-	cin.ignore(256, 'a'); // ignore until 'a' character
+	cin.ignore(256, 'a'); // don't take input until 'a' character
 	last = cin.get();
 	cout<<first<<' '<<last<<endl;*/
 
@@ -39,9 +39,57 @@ void fucntions(){
 	cout.put('x'); // puts a single character on the screen*/
 
 	
+	//cin.getline(s,12,'\n'); // takes input until '\n' is found and 12 characters are being scanned
+
+	string str;
+	//getline(cin, str); // for string type
+	//cin.getline(str); // will not work for string type , only works for array of char
 
 
 }
+
+void putback(){
+	cout<<"please enter a number or a word: ";
+	char c = cin.get();
+
+	if((c >= '0') && (c <= '9')){
+		int n ;
+		cin.putback(c); // send the c to the input streams once again
+		cin>>n; // from the input stram take the same c as an number again
+		cout<<"you entered an number: " <<n<<endl;
+	}
+	else {
+		string s;
+		cin.putback(c);
+		getline(cin , s); // if s is string type then getline will work like this
+		cout<<"you entered a word: "<<s<<endl;
+	}
+}
+
+int peek(){
+	cout << "Please, enter a number or a word: ";
+  	cout.flush();    // ensure output is written
+
+	cin >> std::ws;  // eat up any leading white spaces
+  	int c = std::cin.peek();  // peek character but don't extract or take from input stream
+
+  	if ( c == EOF ) return 1;
+  	if ( std::isdigit(c) )
+  	{
+    	int n;
+    	cin >> n;
+    	cout << "You entered the number: " << n << '\n';
+  	}
+  	else
+  	{
+    	string str;
+    	cin >> str;
+    	cout << "You entered the word: " << str << '\n';
+  	}
+
+  	return 0;
+}
+
 
 
 int main()
@@ -50,5 +98,7 @@ int main()
 	//animal >> cin; //  >> (animal , cin)
 	//animal << cout; //	<< (animal , cout)
 
-	fucntions();
+	//fucntions();
+	//putback();
+	peek();
 }
