@@ -70,11 +70,11 @@ int peek(){
 	cout << "Please, enter a number or a word: ";
   	cout.flush();    // ensure output is written
 
-	cin >> std::ws;  // eat up any leading white spaces
-  	int c = std::cin.peek();  // peek character but don't extract or take from input stream
+	cin >> ws;  // eat up any leading white spaces
+  	int c = cin.peek();  // peek character but don't extract or take from input stream
 
   	if ( c == EOF ) return 1;
-  	if ( std::isdigit(c) )
+  	if ( isdigit(c) )
   	{
     	int n;
     	cin >> n;
