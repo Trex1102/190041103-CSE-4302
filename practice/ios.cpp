@@ -94,7 +94,7 @@ void manipulators(){
 	char a[256] , b[256];
 	//cin>>ws; // this indicates all the whitespaces will be ignored upto the input
 	//cin.getline(a,256); // getline gets the whole line after the space also
-	//cin>>ws;
+	//cin>>ws; // eat up the whitespaces
 	//cin.getline(b,256);
 	//cout<<a<<' '<<b<<endl;
 	//this will ignore all the spaces which will be entered after the cin>>ws is called
