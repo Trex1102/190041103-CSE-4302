@@ -173,11 +173,11 @@ private:
 		nextAccount++;
 	}
 public:
-	Loan(string name = "",float interestRate = 4 , float monthlyDepositAmount = 1500):interestRate(interestRate),monthlyDepositAmount(monthlyDepositAmount){
+	Loan(string name = "",float interestRate = 4 , float monthlyDepositAmount = 1500 , float _balance = 0):interestRate(interestRate),monthlyDepositAmount(monthlyDepositAmount){
 		Account::set_accountName(name);
 		Account::set_accountNo(to_string(accountPrefix) + to_string(nextAccount)); // setting the account no from base class
 		nextAccountNo(); // increasing the account value by 1
-		Account::set_balance(-500);
+		Account::set_balance(_balance);
 		description();
 
 	}
@@ -201,7 +201,7 @@ public:
 	}
 
 	void description(){
-
+		cout<<endl<<"Your Loan Account is being created\nAccount Name: "<<Account::get_accountName()<<endl<<"Account Number: "<<Account::get_accountNo()<<endl<<"Current Loan Amount: "<<Account::get_balance()<<endl<<"You need to pay atleast "<<monthlyDepositAmount<<" every month to avoid "<<interestRate<<'%'<<" interest\nThanks for staying with YMMY Bank\n";
 	}
 };
 
@@ -212,6 +212,10 @@ private:
 	float maximuminterest;
 
 public:
+	TwoYearMDS(string name , ){
+
+	}
+
 	float get_maximuminterest(){
 		return maximuminterest;
 	}

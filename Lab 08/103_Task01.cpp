@@ -24,6 +24,8 @@ int main()
 {
 	Current acc1 ("Navid Alvee", 1500) , acc2("Alif Arshad" , 1500);
 	Savings acc3("MD. Tanvir Hossain Saikat",4, 1500 , 2000);
+	Loan acc4("Reaz Hasan Zoarder" , 4, 3000, 100000);
+	
 
 	//cout<< acc2.get_serviceCharge()<<endl;
 
