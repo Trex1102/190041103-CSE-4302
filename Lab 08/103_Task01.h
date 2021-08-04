@@ -50,7 +50,7 @@ private:
 	const static int serviceCharge =100;
 	const static int accountPrefix = 100;
 	static int nextAccount;
-	void nextAccountNo(){
+	void nextAccountNo(){ // increases next account no by 1
 		nextAccount++;
 	}
 public:
