@@ -90,7 +90,7 @@ private:
 	float monthlyDepositAmount;
 	const static int accountPrefix = 200;
 	static int nextAccount;
-	void nextAccountNo(){
+	void nextAccountNo(){ // increase the next account no by 1
 		nextAccount++;
 	}
 public:
