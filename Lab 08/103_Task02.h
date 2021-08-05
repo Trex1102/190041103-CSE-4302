@@ -33,9 +33,9 @@ public:
 	}
 	~Lecture_Room(){}
 
-	string get_roomName(){return roomName;}
-	int get_roomNo(){return roomNo;}
-	int get_capacity(){return capacity;}
+	string get_roomName()const{return roomName;}
+	int get_roomNo()const{return roomNo;}
+	int get_capacity()const{return capacity;}
 
 	void set_roomName(string _roomName){roomName = _roomName;}
 	void set_roomNo(int _roomNo){roomNo = _roomNo;}
@@ -45,8 +45,8 @@ public:
 
 class N28_Building{
 private:
-	vector<Lab*> labs;
-	vector<Lecture_Room*> lecture_rooms;
+	vector<Lab*> labs; //vector of labs 
+	vector<Lecture_Room*> lecture_rooms; // vector of lecture rooms
 public:
 	N28_Building(){}
 
