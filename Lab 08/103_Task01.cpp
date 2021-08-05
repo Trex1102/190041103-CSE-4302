@@ -17,9 +17,9 @@ int Loan::nextAccount = 1;
 int main()
 {
 	Current acc1 ("Navid Alvee", 1500);
-	Savings acc3("MD. Tanvir Hossain Saikat",4, 1500 , 2000);
-	Loan acc4("Reaz Hasan Zoarder" , 4, 3000, 100000);
-	TwoYearMDS acc5("Alif Arshad");
-	FiveYearMDS acc6("Faisal Tariquazzaman");
-	InitialDepositMDS acc7("Jawed Ridhi");
+	Savings acc2("MD. Tanvir Hossain Saikat",4, 1500 , 2000);
+	Loan acc3("Reaz Hasan Zoarder" , 4, 3000, 100000);
+	TwoYearMDS acc4("Alif Arshad");
+	FiveYearMDS acc5("Faisal Tariquazzaman");
+	InitialDepositMDS acc6("Jawed Ridhi");
 }
