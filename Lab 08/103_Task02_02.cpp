@@ -17,10 +17,10 @@ public:
 	Lab(string _labName = "", int _capacity = 0){
 		labName = _labName;
 		capacity = _capacity;
-		labs.push_back(this);
+		labs.push_back(this); // pushing this object into the vector
 	}
 
-	~Lab(){
+	~Lab(){// finding the iterator of this object in the vector and erase it
 		vector<Lab*>::iterator it;
 		it = find(labs.begin(), labs.end() , this);
 		labs.erase(it);
@@ -37,16 +37,16 @@ private:
 	string roomName;
 	int roomNo;
 	int capacity;
-	static vector <Lecture_Room*> lrooms;
+	static vector <Lecture_Room*> lrooms; 
 	friend class N28_Building;
 public:
 	Lecture_Room(string _roomName = " ", int _roomNo = 0 , int _capacity = 0){
 		roomName = _roomName;
 		roomNo = _roomNo;
 		capacity = _capacity;
-		lrooms.push_back(this);
+		lrooms.push_back(this); // pushing into the vector
 	}
-	~Lecture_Room(){
+	~Lecture_Room(){ // finding the iterator of this object in the vector and erase it
 		vector <Lecture_Room*>::iterator it;
 		it = find(lrooms.begin(), lrooms.end() , this);
 		lrooms.erase(it);
@@ -69,23 +69,23 @@ public:
 	}
 	~N28_Building(){}
 	
-	void showAllLabs() const{
+	void showAllLabs() const{ // showing the values from labs static vector
 		cout<<"Show all Labs:\n";
 		for(auto it: Lab::labs){
 			cout<<"Lab "<<it->get_labName()<<" "<<it->get_capacity()<<" Capacity"<<endl;
 		}
 	}
 
-	void showAllLectureRooms() const{
+	void showAllLectureRooms() const{ // showing the values from lrooms static vector
 		cout<<"Show all lecturers room: \n";
-		for(auto it: Lecture_Room::lrooms){
+		for(auto it: Lecture_Room::lrooms){ 
 			cout<<it->get_roomName()<<" "<<it->get_roomNo()<<" "<<it->get_capacity()<<" Capacity"<<endl;
 		}
 	}
 };
 
-vector<Lab*> Lab:: labs{};
-vector<Lecture_Room*> Lecture_Room::lrooms{};
+vector<Lab*> Lab:: labs{}; // static variable declaration
+vector<Lecture_Room*> Lecture_Room::lrooms{}; // static variable declaration 
 
 int main()
 {
