@@ -65,7 +65,6 @@ public:
 	}
 
 	~Current(){
-		nextAccount --;
 	}
 	int get_serviceCharge()const {return serviceCharge;}
 	int get_accountPrefix()const  {return accountPrefix;}
@@ -133,7 +132,7 @@ public:
 
 //monthly Deposit scheme
 
-class MonthlyDepositScheme:public Account{
+class MonthlyDepositScheme:protected Account{
 private:
 	float interestRate;
 	float monthlyDepositAmount;
