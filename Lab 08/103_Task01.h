@@ -38,8 +38,9 @@ public:
 	void set_balance(float _balance){
 		balance = _balance;
 	}
-
-
+	void description() const{
+		cout<<endl<<"Welcome to YMMY Bank"<<endl;
+	}
 
 };
 
@@ -59,6 +60,7 @@ public:
 		Account::set_accountNo(to_string(accountPrefix) + to_string(nextAccount)); // setting the account no from base class
 		nextAccountNo(); // increasing the account value by 1
 		Account::set_balance(_balance);
+		Account::description(); // function overriding
 		description(); // gives the details of the account
 	}
 
@@ -76,7 +78,6 @@ public:
 	}
 
 	void description() const{
-		cout<<endl;
 		cout<<"Initial deposit: "<<Account::get_balance()<<endl;
 		cout<<"Your Current Account is being created\nAccount Name: "<<Account::get_accountName()<<endl<<"Account Number: "<<Account::get_accountNo()<<endl<<"Current Balance: "<<Account::get_balance()<<endl<<"You can withdraw your money any time\nThanks for staying with YMMY Bank\n";
 	} // showing the current account status & description
@@ -99,6 +100,7 @@ public:
 		Account::set_accountNo(to_string(accountPrefix) + to_string(nextAccount)); // setting the account no from base class
 		nextAccountNo(); // increasing the account value by 1
 		Account::set_balance(_balance);
+		Account::description();
 		description();
 	}
 	~Savings(){}
@@ -124,7 +126,6 @@ public:
 	}
 
 	void description() const{
-		cout<<endl;
 		cout<<"Initial deposit: "<<Account::get_balance()<<endl;
 		cout<<"Your Savings Account is being created\nAccount Name: "<<Account::get_accountName()<<endl<<"Account Number: "<<Account::get_accountNo()<<endl<<"Current Balance: "<<Account::get_balance()<<endl<<"You need to deposit: "<<monthlyDepositAmount<<" Each month to earn "<<interestRate<<"%"<<" interest.\nYou can withdraw your money any time\nThanks for staying with YMMY Bank\n";
 	} // showing the current account status & description
@@ -167,6 +168,11 @@ public:
 		monthlyDepositAmount = _monthlyDepositAmount;
 	}
 
+	void description() const{
+		Account::description();
+		cout<<"Monthly Deposit Scheme. You have to pay A fixed amount every month\n";
+	}
+
 };
 
 //loan
@@ -186,6 +192,7 @@ public:
 		Account::set_accountNo(to_string(accountPrefix) + to_string(nextAccount)); // setting the account no from base class
 		nextAccountNo(); // increasing the account value by 1
 		Account::set_balance(_balance);
+		Account::description();
 		description();
 
 	}
@@ -212,7 +219,7 @@ public:
 	}
 
 	void description() const{
-		cout<<endl<<"Your Loan Account is being created\nAccount Name: "<<Account::get_accountName()<<endl<<"Account Number: "<<Account::get_accountNo()<<endl<<"Current Loan Amount: "<<Account::get_balance()<<endl<<"You need to pay atleast "<<monthlyDepositAmount<<" every month to avoid "<<interestRate<<'%'<<" interest\nThanks for staying with YMMY Bank\n";
+		cout<<"Your Loan Account is being created\nAccount Name: "<<Account::get_accountName()<<endl<<"Account Number: "<<Account::get_accountNo()<<endl<<"Current Loan Amount: "<<Account::get_balance()<<endl<<"You need to pay atleast "<<monthlyDepositAmount<<" every month to avoid "<<interestRate<<'%'<<" interest\nThanks for staying with YMMY Bank\n";
 	}
 };
 
@@ -231,6 +238,7 @@ public:
 		MonthlyDepositScheme::nextAccountNo(); // increasing the account value by 1
 		MonthlyDepositScheme::set_interestRate(interestRate); // setting monthly deposite scheme's interestrate
 		MonthlyDepositScheme::set_monthlyDepositAmount(monthlyDepositAmount); // setting monthly deposite scheme's deposite amount
+		MonthlyDepositScheme::description();
 		description();
 	}
 
@@ -243,7 +251,7 @@ public:
 	}
 
 	void description() const{
-		cout<<endl<<"Your Two Year Monthly Deposit Scheme Account is being created\nAccount Name: "<<Account::get_accountName()<<endl<<"Account Number: "<<Account::get_accountNo()<<endl<<"Current Balance: "<<Account::get_balance()<<endl<<"You need to deposit atleast "<<MonthlyDepositScheme::get_monthlyDepositAmount()<<" every month to get "<<MonthlyDepositScheme::get_interestRate()<<'%'<<" interest\n"<<"If you don't close within 2 years you will get maximum "<<maximuminterest<<"% "<<"interest\nThanks for staying with YMMY Bank\n";
+		cout<<"Your Two Year Monthly Deposit Scheme Account is being created\nAccount Name: "<<Account::get_accountName()<<endl<<"Account Number: "<<Account::get_accountNo()<<endl<<"Current Balance: "<<Account::get_balance()<<endl<<"You need to deposit atleast "<<MonthlyDepositScheme::get_monthlyDepositAmount()<<" every month to get "<<MonthlyDepositScheme::get_interestRate()<<'%'<<" interest\n"<<"If you don't close within 2 years you will get maximum "<<maximuminterest<<"% "<<"interest\nThanks for staying with YMMY Bank\n";
 	}
 };
 
@@ -262,6 +270,7 @@ public:
 		MonthlyDepositScheme::nextAccountNo(); // increasing the account value by 1
 		MonthlyDepositScheme::set_interestRate(interestRate);
 		MonthlyDepositScheme::set_monthlyDepositAmount(monthlyDepositAmount);
+		MonthlyDepositScheme::description();
 		description();
 	}
 
@@ -270,7 +279,7 @@ public:
 	}
 
 	void description() const{
-		cout<<endl<<"Your Five Year Monthly Deposit Scheme Account is being created\nAccount Name: "<<Account::get_accountName()<<endl<<"Account Number: "<<Account::get_accountNo()<<endl<<"Current Balance: "<<Account::get_balance()<<endl<<"You need to deposit atleast "<<MonthlyDepositScheme::get_monthlyDepositAmount()<<" every month to get "<<MonthlyDepositScheme::get_interestRate()<<'%'<<" interest\n"<<"If you don't close within 5 years you will get maximum "<<maximuminterest<<"% "<<"interest\nThanks for staying with YMMY Bank\n";
+		cout<<"Your Five Year Monthly Deposit Scheme Account is being created\nAccount Name: "<<Account::get_accountName()<<endl<<"Account Number: "<<Account::get_accountNo()<<endl<<"Current Balance: "<<Account::get_balance()<<endl<<"You need to deposit atleast "<<MonthlyDepositScheme::get_monthlyDepositAmount()<<" every month to get "<<MonthlyDepositScheme::get_interestRate()<<'%'<<" interest\n"<<"If you don't close within 5 years you will get maximum "<<maximuminterest<<"% "<<"interest\nThanks for staying with YMMY Bank\n";
 	}
 };
 
@@ -291,10 +300,11 @@ public:
 		MonthlyDepositScheme::nextAccountNo(); // increasing the account value by 1
 		MonthlyDepositScheme::set_interestRate(interestRate);
 		MonthlyDepositScheme::set_monthlyDepositAmount(monthlyDepositAmount);
+		MonthlyDepositScheme::description();
 		description();
 	}
 
-	float get_maximuminterest(){
+	float get_maximuminterest() const{
 		return maximuminterest;
 	}
 
@@ -302,7 +312,7 @@ public:
 		_maximuminterest = maximuminterest;
 	}
 
-	float get_initialDepositAmount(){
+	float get_initialDepositAmount() const{
 		return initialDepositAmount;
 	}
 
@@ -311,7 +321,7 @@ public:
 	}
 
 	void description() const{
-		cout<<endl<<"Your Initial Deposit Scheme Account is being created\nAccount Name: "<<Account::get_accountName()<<endl<<"Account Number: "<<Account::get_accountNo()<<endl<<"Current Balance: "<<Account::get_balance()<<endl<<"You need to deposit atleast "<<MonthlyDepositScheme::get_monthlyDepositAmount()<<" every month to get "<<MonthlyDepositScheme::get_interestRate()<<'%'<<" interest\n"<<"If you don't close within 2 years you will get maximum "<<maximuminterest<<"% "<<"interest\nThanks for staying with YMMY Bank\n";
+		cout<<"Your Initial Deposit Scheme Account is being created\nAccount Name: "<<Account::get_accountName()<<endl<<"Account Number: "<<Account::get_accountNo()<<endl<<"Current Balance: "<<Account::get_balance()<<endl<<"You need to deposit atleast "<<MonthlyDepositScheme::get_monthlyDepositAmount()<<" every month to get "<<MonthlyDepositScheme::get_interestRate()<<'%'<<" interest\n"<<"If you don't close within 2 years you will get maximum "<<maximuminterest<<"% "<<"interest\nThanks for staying with YMMY Bank\n";
 	}
 };
 
