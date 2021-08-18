@@ -185,6 +185,12 @@ void sort_furniture_discount(Furniture *furnitures[],int no_of_furnitures)
     sort(furnitures,furnitures+no_of_furnitures, _sort);
 }
 
+void del(Furniture *furnitures[], int no_of_furnitures)
+{
+    for(int i = 0 ; i<no_of_furnitures; i++){
+        delete(furnitures[i]);
+    }
+}
 
 int main()
 {
@@ -194,11 +200,12 @@ int main()
     f_list[2] = new Almirah(13000,345,Material::Wood,Door::Two);
     f_list[3] = new Bed(10090,123,Material::Wood,BedSize::Single);
     f_list[2]->setDiscount(30);
+    cout<<"-------------------------------------------------------"<<endl;
     for(int i=0; i<4; i++)
     {
         f_list[i]->productDetails();
     }
-
+    
     cout<<"Sorting:-----------------------------------------------"<<endl;
 
     sort_furniture_discount(f_list,4);
@@ -206,4 +213,6 @@ int main()
     {
         f_list[i]->productDetails();
     }
+
+    del(f_list, 4);
 }
