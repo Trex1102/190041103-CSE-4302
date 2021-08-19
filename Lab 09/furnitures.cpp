@@ -29,16 +29,22 @@ public:
             discount=val;
     }
     
-    double getDiscount()
+    double getDiscount() const
     {
         return discount;
+    }
+
+    double getDiscountedPrice() 
+    {
+        double r = price - discount;
+        return r;
     }
 
     void setMadeof(Material val)
     {
         madeof=val;
     }
-    string getMadeof()
+    string getMadeof() const
     {
         if(madeof==Material::Wood)
             return string("Wood");
@@ -50,7 +56,7 @@ public:
             return string("");
     }
     virtual void productDetails(string p_name = "null")=0;
-    void getInfo()
+    void getInfo() const
     {
         cout<<"Regular Price: "<<price<<endl;
         cout<<"Discounted Price: "<<discount<<endl;
@@ -115,7 +121,7 @@ public:
         seatno=s;
     }
 
-    string getSeatNumber()
+    string getSeatNumber() const
     {
         if(seatno==SeatNumber::One)
             return string("One");
@@ -154,7 +160,7 @@ public:
     {
         door=_d;
     }
-    string getAlmirahDoor()
+    string getAlmirahDoor() const
     {
         if(door==Door::Two)
             return string("Two");
@@ -177,7 +183,7 @@ public:
 
 bool _sort(Furniture *a, Furniture *b)
 {
-    return a ->getDiscount() > b->getDiscount();
+    return a ->getDiscountedPrice() > b->getDiscountedPrice();
 }
 
 void sort_furniture_discount(Furniture *furnitures[],int no_of_furnitures)
