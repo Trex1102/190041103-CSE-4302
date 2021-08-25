@@ -120,6 +120,20 @@ public:
         cout<<"6-8 years"<<endl;
     }
 };
+class Bat:public Animal
+{
+
+};
+
+class Entity
+{
+public:
+    void virtual show(){cout<<"This is an entity"<<endl;}
+};
+
+class Hero : public Entity
+{  
+};
 
 
 int main()
@@ -139,4 +153,8 @@ int main()
     a->info();
     a->lifespan();
     a->sound(); // accessing bcz virutal
+    //Animal b;
+    //Bat b;
+    Entity e;
+    Hero h;
 }
