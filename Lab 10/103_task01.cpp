@@ -153,8 +153,8 @@ int main()
     a->info();
     a->lifespan();
     a->sound(); // accessing bcz virutal
-    //Animal b;
-    //Bat b;
+    //Animal b; // compile error
+    //Bat b; // compile error
     Entity e;
     Hero h;
 }
