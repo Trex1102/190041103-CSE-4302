@@ -19,7 +19,7 @@ public:
     // User defined copy constructor
     /*base (base &x){
         data = x.data;
-        cout<<"User defined Copy constructor"<<endl;
+        cout<<"Copy constructor"<<endl;
     }*/ 
 
     ~base(){}
@@ -38,10 +38,18 @@ public:
         cout<<*add<<endl;
         cout<<add<<endl;
     }
-    magma operator=(magma &x){
+    /*magma operator=(magma &x){
         add = new int;
         *(add) = *(x.add);
+        return *this;
     }
+    magma(magma &x){
+        add = new int;
+        *(add) = *(x.add);
+    }*/
+private:
+    //magma operator = (magma &x);
+    //magma (magma &x);
 };
 
 int main()
@@ -51,7 +59,7 @@ int main()
     b2 = b1; // assignment operator
     b2.display();
     //base b3 = b2; // copy initialization  
-    base b3(b2); // default copy constructor
+    base b3(b2); // copy initialization
     b3.display();
     int n = 5;
     magma m1(&n);
@@ -59,6 +67,8 @@ int main()
     magma m2;
     m2 = m1;
     m2.display();
+    magma m3(m2);
+    m3.display();
 
 
 }
