@@ -22,7 +22,7 @@ class Dog : public Animal{ // derived class with access specifier
 private:
 	int x;
 public:
-	Dog(int x= 0):Animal(x), x(x){}
+	Dog(int x= 0):Animal(x), x(x){} // if base class has constructor it has to be filled first
 	//void getx(){cout<<x<<endl;}
 	void eat(){ // overridding
 		Animal::eat(); // calling base class function using scope resulation operator
@@ -119,7 +119,11 @@ public:
 	void display(){
 		cout<<"This is Derived Class"<<endl;
 		cout<<"Derived Var: "<<derived_var<<endl;
-		cout<<"Base Var: "<<base_var<<endl; 
+		//cout<<"Base Var: "<<base_var<<endl; 
+	}
+
+	void hello(){
+		cout<<"hello base"<<endl;
 	}
 };
 
@@ -159,6 +163,7 @@ int main()
 
 	Circle circle; // abstract class
 	circle.draw(); // pure virtual function
+	cout<<"new"<<endl;
 
 	Base *base;
 	Derived *derived;
@@ -166,6 +171,7 @@ int main()
 	base->base_var = 5;
 	base ->display(); // showing the derived display --> 
 	base -> test();
+	base -> hello();
 	derived = new Derived;
 	derived ->base_var = 6; // calling base class var from derived class pointer
 	derived ->derived_var = 7;

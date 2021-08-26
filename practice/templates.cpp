@@ -26,4 +26,11 @@ int main()
 	print("Hello"); // print<int> (4);
 	Array<int , 6>array;
 	array.printSize();
+
 }
+
+/*
+Some notes:
+	1. Don't use macros: 1. don’t perform any type checking
+ 	2. Confined to functions that can be expressed in a single statement
+*/

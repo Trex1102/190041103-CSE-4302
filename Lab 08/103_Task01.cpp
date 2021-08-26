@@ -21,5 +21,5 @@ int main()
 	Loan acc3("Reaz Hasan Zoarder" , 4, 3000, 100000);
 	TwoYearMDS acc4("Alif Arshad");
 	FiveYearMDS acc5("Faisal Tariquazzaman");
-	InitialDepositMDS acc6("Jawed Ridhi");
+	InitialDepositMDS acc6("Jawed Riddhi");
 }
