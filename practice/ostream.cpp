@@ -10,7 +10,7 @@ void functions(){
 	char c = 'a';
 	cout<<"printing a\n";
 	cout.flush(); // ensure cout is written as it outputs from buffer directly
-	cout.put(c);
+	cout.put(c); // put c on the console
 }
 
 int main()
