@@ -4,8 +4,10 @@ using namespace std;
 template<typename T>
 T amax(T *arr,int size, int n)
 {
-    sort(arr, arr+size);
-    return arr[size-n];
+    T temp[size];
+    copy(arr, arr+size, temp);
+    sort(temp, temp+size);
+    return temp[size-n];
 }
 
 int main()
